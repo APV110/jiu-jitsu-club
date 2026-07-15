@@ -14,11 +14,23 @@
     --white: #ffffff;
 }
 
+html, body {
+    height: 100%;
+}
+
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
     color: var(--text-color);
     background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
 }
 
 .container {
@@ -31,10 +43,8 @@ body {
 .navbar {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 0.75rem 0;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    padding: 0.5rem 0;
+    flex-shrink: 0;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }
 
@@ -45,14 +55,14 @@ body {
 }
 
 .navbar-brand h1 {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     color: var(--secondary-color);
 }
 
 .navbar-menu {
     display: flex;
     list-style: none;
-    gap: 1.5rem;
+    gap: 1.2rem;
 }
 
 .navbar-menu a {
@@ -60,7 +70,7 @@ body {
     text-decoration: none;
     transition: color 0.3s ease;
     font-weight: 500;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .navbar-menu a:hover,
@@ -72,12 +82,12 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, #333 100%);
     color: var(--white);
-    padding: 2rem 2rem;
+    padding: 1.25rem 2rem;
     text-align: center;
-    min-height: calc(100vh - 60px);
     display: flex;
     align-items: center;
     justify-content: center;
+    flex: 1;
 }
 
 .hero-content {
@@ -85,44 +95,44 @@ body {
 }
 
 .hero-content h2 {
-    font-size: 2.2rem;
-    margin-bottom: 0.5rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.3rem;
     color: var(--secondary-color);
 }
 
 .hero-content p {
-    font-size: 1rem;
-    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    margin-bottom: 0.6rem;
 }
 
 .hero-buttons {
     display: flex;
-    gap: 0.75rem;
+    gap: 0.5rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
 }
 
 .hero-buttons .btn {
-    flex: 0 1 180px;
-    min-width: 160px;
+    flex: 0 1 160px;
+    min-width: 140px;
 }
 
 /* Hero Quote */
 .hero-quote {
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-style: italic;
-    margin-top: 0.75rem;
+    margin-top: 0.5rem;
     color: var(--secondary-color);
-    line-height: 1.3;
+    line-height: 1.2;
 }
 
 .quote-citation {
-    font-size: 0.75rem;
+    font-size: 0.7rem;
     font-style: normal;
     color: var(--white);
     display: block;
-    margin-top: 0.2rem;
+    margin-top: 0.15rem;
 }
 
 /* Desktop-only line break */
@@ -133,11 +143,11 @@ body {
 /* Buttons */
 .btn {
     display: inline-block;
-    padding: 0.6rem 1.5rem;
+    padding: 0.5rem 1.2rem;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -156,26 +166,27 @@ body {
 
 /* Features Section */
 .features {
-    padding: 3rem 2rem;
+    padding: 1.5rem 2rem;
     background-color: var(--light-bg);
+    flex-shrink: 0;
 }
 
 .features h3 {
     text-align: center;
-    font-size: 1.8rem;
-    margin-bottom: 2rem;
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
     color: var(--primary-color);
 }
 
 .feature-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
 }
 
 .feature {
     background-color: var(--white);
-    padding: 1.5rem;
+    padding: 1rem;
     border-radius: 8px;
     text-align: center;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
@@ -183,56 +194,57 @@ body {
 }
 
 .feature:hover {
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 
 .feature h4 {
     color: var(--secondary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    font-size: 0.95rem;
 }
 
 .feature p {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
+    line-height: 1.3;
 }
 
 /* Page Header */
 .page-header {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 1.5rem 2rem;
+    padding: 1rem 2rem;
     text-align: center;
 }
 
 .page-header h2 {
     color: var(--secondary-color);
-    font-size: 2rem;
+    font-size: 1.6rem;
 }
 
 /* Content Section */
 .content {
-    padding: 2rem;
+    padding: 1.5rem 2rem;
 }
 
 .content h3 {
     color: var(--primary-color);
-    margin-top: 1.5rem;
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.75rem;
+    font-size: 1.3rem;
 }
 
 .content p {
-    margin-bottom: 1rem;
-    line-height: 1.8;
+    margin-bottom: 0.75rem;
+    line-height: 1.6;
 }
 
 .content ul {
     margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
 }
 
 .content li {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 
 .content a {
@@ -249,23 +261,23 @@ body {
 .schedule-table {
     width: 100%;
     border-collapse: collapse;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
 .schedule-table th {
     background-color: var(--primary-color);
     color: var(--white);
-    padding: 0.75rem;
+    padding: 0.6rem;
     text-align: left;
     font-weight: 600;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .schedule-table td {
-    padding: 0.75rem;
+    padding: 0.6rem;
     border-bottom: 1px solid var(--border-color);
-    font-size: 0.9rem;
+    font-size: 0.8rem;
 }
 
 .schedule-table tr:hover {
@@ -276,8 +288,8 @@ body {
 .instructor-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin: 2rem 0;
+    gap: 1.5rem;
+    margin: 1rem 0;
 }
 
 .instructor-card {
@@ -295,7 +307,7 @@ body {
 
 .instructor-image {
     width: 100%;
-    height: 200px;
+    height: 150px;
     background-color: #ddd;
     display: flex;
     align-items: center;
@@ -310,43 +322,45 @@ body {
 
 .instructor-card h3 {
     color: var(--primary-color);
-    margin: 1rem 0 0.5rem 0;
-    padding: 0 1rem;
+    margin: 0.75rem 0 0.3rem 0;
+    padding: 0 0.75rem;
+    font-size: 1rem;
 }
 
 .instructor-card .belt {
     color: var(--secondary-color);
     font-weight: bold;
-    padding: 0 1rem;
+    padding: 0 0.75rem;
+    font-size: 0.85rem;
 }
 
 .instructor-card p {
-    padding: 0.5rem 1rem 1rem 1rem;
-    font-size: 0.95rem;
+    padding: 0.3rem 0.75rem 0.75rem 0.75rem;
+    font-size: 0.85rem;
 }
 
 /* Contact Section */
 .contact-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 2.5rem;
-    margin: 1.5rem 0;
+    gap: 1.5rem;
+    margin: 1rem 0;
 }
 
 .contact-info {
     background-color: var(--light-bg);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
 }
 
 .contact-info h3 {
     margin-top: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .contact-info p {
-    margin-bottom: 1rem;
-    font-size: 0.95rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9rem;
 }
 
 .contact-info a {
@@ -361,30 +375,30 @@ body {
 /* Forms */
 .contact-form h3 {
     margin-top: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
 }
 
 .form-group {
-    margin-bottom: 1rem;
+    margin-bottom: 0.8rem;
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.3rem;
     font-weight: 600;
     color: var(--primary-color);
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .form-group input,
 .form-group textarea,
 .form-group select {
     width: 100%;
-    padding: 0.6rem;
+    padding: 0.5rem;
     border: 1px solid var(--border-color);
     border-radius: 5px;
     font-family: inherit;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
 }
 
 .form-group input:focus,
@@ -397,9 +411,9 @@ body {
 
 #signupForm {
     background-color: var(--light-bg);
-    padding: 1.5rem;
+    padding: 1.2rem;
     border-radius: 8px;
-    margin-top: 1.5rem;
+    margin-top: 1rem;
 }
 
 /* Footer */
@@ -407,107 +421,40 @@ footer {
     background-color: var(--primary-color);
     color: var(--white);
     text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-    font-size: 0.9rem;
+    padding: 0.75rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
     .navbar-menu {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 0.3rem;
     }
 
     .navbar .container {
         flex-direction: column;
-        gap: 0.75rem;
-    }
-
-    .navbar-brand h1 {
-        font-size: 1.2rem;
-    }
-
-    .navbar-menu a {
-        font-size: 0.85rem;
-    }
-
-    .hero {
-        padding: 1.5rem 2rem;
-        min-height: auto;
-    }
-
-    .hero-content h2 {
-        font-size: 1.6rem;
-    }
-
-    .hero-content p {
-        font-size: 0.9rem;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
         gap: 0.5rem;
     }
 
-    .hero-buttons .btn {
-        flex: 1;
-        width: 100%;
-    }
-
-    /* Hide line break on mobile */
-    .desktop-only {
-        display: none;
-    }
-
-    .hero-quote {
-        font-size: 0.85rem;
-    }
-
-    .quote-citation {
-        font-size: 0.7rem;
-    }
-
-    .feature-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .instructor-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .page-header h2 {
-        font-size: 1.5rem;
-    }
-
-    .content h3 {
-        font-size: 1.2rem;
-    }
-}
-
-@media (max-width: 480px) {
     .navbar-brand h1 {
         font-size: 1rem;
     }
 
+    .navbar-menu a {
+        font-size: 0.75rem;
+    }
+
     .hero {
-        padding: 1rem;
+        padding: 1rem 1.5rem;
     }
 
     .hero-content h2 {
-        font-size: 1.3rem;
+        font-size: 1.4rem;
     }
 
     .hero-content p {
-        font-size: 0.85rem;
-    }
-
-    .btn {
-        padding: 0.5rem 1.2rem;
         font-size: 0.8rem;
     }
 
@@ -517,22 +464,124 @@ footer {
     }
 
     .hero-buttons .btn {
+        flex: 1;
         width: 100%;
     }
 
+    .desktop-only {
+        display: none;
+    }
+
     .hero-quote {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
     }
 
     .quote-citation {
         font-size: 0.65rem;
     }
 
+    .feature-grid {
+        grid-template-columns: 1fr;
+        gap: 0.75rem;
+    }
+
+    .features {
+        padding: 1rem 1.5rem;
+    }
+
     .features h3 {
-        font-size: 1.4rem;
+        font-size: 1.2rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .instructor-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .page-header h2 {
+        font-size: 1.3rem;
     }
 
     .content h3 {
         font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        font-size: 14px;
+    }
+
+    .navbar-brand h1 {
+        font-size: 0.9rem;
+    }
+
+    .hero {
+        padding: 0.75rem 1rem;
+    }
+
+    .hero-content h2 {
+        font-size: 1.2rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .hero-content p {
+        font-size: 0.75rem;
+        margin-bottom: 0.4rem;
+    }
+
+    .btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.75rem;
+    }
+
+    .hero-buttons {
+        gap: 0.3rem;
+        margin-bottom: 0.3rem;
+    }
+
+    .hero-quote {
+        font-size: 0.7rem;
+    }
+
+    .quote-citation {
+        font-size: 0.6rem;
+    }
+
+    .features {
+        padding: 0.75rem 1rem;
+    }
+
+    .features h3 {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+
+    .feature-grid {
+        gap: 0.5rem;
+    }
+
+    .feature {
+        padding: 0.75rem;
+    }
+
+    .feature h4 {
+        font-size: 0.85rem;
+        margin-bottom: 0.2rem;
+    }
+
+    .feature p {
+        font-size: 0.7rem;
+    }
+
+    footer {
+        padding: 0.5rem;
+        font-size: 0.75rem;
     }
 }
