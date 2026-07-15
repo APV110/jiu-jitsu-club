@@ -91,11 +91,34 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
+    margin-bottom: 2rem;
 }
 
 .hero-buttons .btn {
     flex: 0 1 200px;
     min-width: 180px;
+}
+
+/* Hero Quote */
+.hero-quote {
+    font-size: 1.1rem;
+    font-style: italic;
+    margin-top: 2rem;
+    color: var(--secondary-color);
+    line-height: 1.8;
+}
+
+.quote-citation {
+    font-size: 0.95rem;
+    font-style: normal;
+    color: var(--white);
+    display: block;
+    margin-top: 0.5rem;
+}
+
+/* Desktop-only line break */
+.desktop-only {
+    display: inline;
 }
 
 /* Buttons */
@@ -399,6 +422,19 @@ footer {
         width: 100%;
     }
 
+    /* Hide line break on mobile */
+    .desktop-only {
+        display: none;
+    }
+
+    .hero-quote {
+        font-size: 1rem;
+    }
+
+    .quote-citation {
+        font-size: 0.9rem;
+    }
+
     .feature-grid {
         grid-template-columns: 1fr;
     }
@@ -450,5 +486,13 @@ footer {
 
     .hero-buttons .btn {
         width: 100%;
+    }
+
+    .hero-quote {
+        font-size: 0.95rem;
+    }
+
+    .quote-citation {
+        font-size: 0.85rem;
     }
 }
