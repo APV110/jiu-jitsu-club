@@ -71,7 +71,7 @@ body {
 .hero {
     background: linear-gradient(135deg, var(--primary-color) 0%, #333 100%);
     color: var(--white);
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
     text-align: center;
 }
 
@@ -83,7 +83,7 @@ body {
 
 .hero-content p {
     font-size: 1.3rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-buttons {
@@ -91,7 +91,7 @@ body {
     gap: 1rem;
     justify-content: center;
     flex-wrap: wrap;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
 }
 
 .hero-buttons .btn {
@@ -101,19 +101,19 @@ body {
 
 /* Hero Quote */
 .hero-quote {
-    font-size: 1.1rem;
+    font-size: 0.95rem;
     font-style: italic;
-    margin-top: 2rem;
+    margin-top: 1.5rem;
     color: var(--secondary-color);
-    line-height: 1.8;
+    line-height: 1.4;
 }
 
 .quote-citation {
-    font-size: 0.95rem;
+    font-size: 0.8rem;
     font-style: normal;
     color: var(--white);
     display: block;
-    margin-top: 0.5rem;
+    margin-top: 0.3rem;
 }
 
 /* Desktop-only line break */
@@ -428,11 +428,11 @@ footer {
     }
 
     .hero-quote {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
     .quote-citation {
-        font-size: 0.9rem;
+        font-size: 0.75rem;
     }
 
     .feature-grid {
@@ -471,7 +471,7 @@ footer {
     }
 
     .hero {
-        padding: 3rem 1rem;
+        padding: 2rem 1rem;
     }
 
     .btn {
@@ -489,10 +489,10 @@ footer {
     }
 
     .hero-quote {
-        font-size: 0.95rem;
+        font-size: 0.85rem;
     }
 
     .quote-citation {
-        font-size: 0.85rem;
+        font-size: 0.7rem;
     }
 }
