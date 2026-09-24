@@ -1,23 +1,23 @@
-// Form validation
 function validateEmail(email) {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return emailRegex.test(email);
 }
 
-function validateForm(formElement) {
+function validateConsultationForm(formElement) {
     const requiredFields = formElement.querySelectorAll('[required]');
     let isValid = true;
 
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
+    requiredFields.forEach((field) => {
+        const value = field.value.trim();
+        field.classList.remove('error');
+
+        if (!value) {
             field.classList.add('error');
             isValid = false;
-        } else {
-            field.classList.remove('error');
+            return;
         }
 
-        // Email validation
-        if (field.type === 'email' && !validateEmail(field.value)) {
+        if (field.type === 'email' && !validateEmail(value)) {
             field.classList.add('error');
             isValid = false;
         }
@@ -26,58 +26,34 @@ function validateForm(formElement) {
     return isValid;
 }
 
-// Contact form submission
-const contactForm = document.getElementById('contactForm');
-if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateForm(this)) {
-            // For static sites, you'd typically use a service like Formspree
-            // This is a placeholder for form submission handling
-            alert('Thank you for your message! We will get back to you soon.');
-            this.reset();
-        } else {
-            alert('Please fill out all required fields correctly.');
-        }
-    });
-}
-
-// Signup form submission
-const signupForm = document.getElementById('signupForm');
-if (signupForm) {
-    signupForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        if (validateForm(this)) {
-            alert('Thank you for signing up! We will contact you soon with details about your trial class.');
-            this.reset();
-        } else {
-            alert('Please fill out all required fields correctly.');
-        }
-    });
-}
-
-// Set active navigation link
-document.addEventListener('DOMContentLoaded', function() {
-    const navLinks = document.querySelectorAll('.navbar-menu a');
+document.addEventListener('DOMContentLoaded', () => {
+    const navLinks = document.querySelectorAll('.navbar-menu a[href$=".html"]');
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
 
-    navLinks.forEach(link => {
+    navLinks.forEach((link) => {
         const href = link.getAttribute('href');
-        if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+        if (href === currentPage) {
             link.classList.add('active');
         }
     });
-});
 
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
-        }
+    const consultationForms = document.querySelectorAll('[data-consultation-form]');
+    consultationForms.forEach((form) => {
+        const confirmation = form.querySelector('[data-form-confirmation]');
+
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            if (!validateConsultationForm(form)) {
+                return;
+            }
+
+            if (confirmation) {
+                confirmation.classList.remove('hidden');
+                confirmation.textContent = 'Thanks for requesting a consultation. We will follow up within one business day to confirm your next steps.';
+            }
+
+            form.reset();
+        });
     });
 });
