@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Jiu-Jitsu Club - Sign up, ask questions, or get more information">
+    <title>Contact - Jiu-Jitsu Club</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <h1>LHBC: Jiu-Jitsu Club</h1>
+            </div>
+            <ul class="navbar-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="schedule.html">Schedule</a></li>
+                <li><a href="instructors.html">Instructors</a></li>
+                <li><a href="contact.html" class="active">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h2>Contact Us</h2>
+            </div>
+        </section>
+
+        <section class="content">
+            <div class="container">
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <h3>Information</h3>
+                        <p><strong>Address:</strong><br>FLC at LHBC</p>
+                        <p>Please contact Tony or Kyle directly with any questions</p>
+                    </div>
+
+                    <div class="contact-form">
+                        <h3>Join Us</h3>
+                        <form action="https://formspree.io/f/xlgqdndw" method="POST">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Jiu-Jitsu Club. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
